@@ -158,3 +158,9 @@ AuthUserFile /var/www/midir/.claves
 `touch /var/www/midir/.claves`  
 `htpasswd /var/www/midir/.claves grupo10sc`  
 pass: grupo10sc1234
+
+
+
+## SERVER DB
+
+- Instalar los siguientes paquetes:  
