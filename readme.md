@@ -163,4 +163,64 @@ pass: grupo10sc1234
 
 ## SERVER DB
 
-- Instalar los siguientes paquetes:  
+- Servidor de Base de Datos PostgreSQL:  
+`dnf install postgresql postgresql-server -y`  
+
+- Configurar Base de Datos Inicial:  
+`postgresql-setup --initdb`  
+`systemctl enable --now postgresql`  
+`su - postgres`  
+`psql -c "alter user postgres with password 'grupo10sc1234'"`  
+
+
+- Configurar el Inicio del Servicio:  
+`systemctl enable postgresql`  
+`systemctl start postgresql`  
+`systemctl status postgresql`  
+`systemctl restart postgresql`  
+
+- Configurar Archivo Principal de PostgreSQL:  
+`firewall-cmd --add-service=postgresql --permanent`  
+`firewall-cmd --reload`  
+`code /var/lib/pgsql/data/postgresql.conf`  
+
+- Control de Acceso PostgreSQL:  
+`code /var/lib/pgsql/data/pg_hba.conf`  
+
+Añadir los siguientes datos en las línea 115:
+info # ADMIN:
+host    all             all             0.0.0.0/0               password
+info # Grupo:
+host    db_terresco     all             0.0.0.0/0               password
+
+
+- Ingreso por los permisos dados de usuario por contraseña:  
+crear roles 
+    grupo10sc
+crear database
+    db_terresco
+asignar el rol permitido a la bd.
+
+
+## SERVER FTP
+
+- Se procede instalar:  
+`dnf install vsftpd -y`  
+
+- Acceso SELinux:  
+`setsebool -P allow_ftpd_full_access on`  
+
+- Firewall:  
+`firewall-cmd --permanent --zone=public --add-service=ftp`  
+
+
+- Configurar el Inicio del Servicio:  
+`systemctl enable vsftpd` 
+`systemctl start vsftpd`  
+`systemctl status vsftpd`  
+`systemctl restart vsftpd` 
+
+- Configuración:  
+`code /etc/vsftpd/vsftpd.conf`  
+
+`touch /etc/vsftpd/vsftpd.chroot_list`  
