@@ -4,41 +4,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TecnoWeb Welcome Grupo10SC</title>
+    <title>Andres Justiniano</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 
 <body>
     <header>
-        <h1>Página Principal | Grupo10SC</h1>
-        <p>Tecnología Web INF513</p>
+        <h1>Información | Vitaminas</h1>
+        <p>Andres Justiniano</p>
     </header>
 
+
+
     <section>
-        <h2>Práctica U4-1</h2>
-        <ul>
-            <li><a href="/inf513/grupo10sc/practica-u4-1/justiniano/curriculum.html">Alvaro Justiniano</a></li>
-            <li><a href="/inf513/grupo10sc/practica-u4-1/sosa/">Antonio Sosa</a></li>
-            <li><a href="/inf513/grupo10sc/practica-u4-1/terrazas/">Sergio Terrazas</a></li>
-        </ul>
-    </section>
-    <section>
-        <h2>Práctica U4-2</h2>
-        <ul>
-            <li><a href="/inf513/grupo10sc/practica-u4-2/justiniano/form_contact.html">Alvaro Justiniano</a></li>
-            <li><a href="/inf513/grupo10sc/practica-u4-2/sosa/">Antonio Sosa</a></li>
-            <li><a href="/inf513/grupo10sc/practica-u4-2/terrazas/">Sergio Terrazas</a></li>
-        </ul>
+        información de ayuda posterior
     </section>
 
     <section>
-
+        <div id="content"></div>
     </section>
 
     <section>
         <footer>
-            <p>@2024 Tecnología Web INF513</p>
+            <p>@2025 Información super vital</p>
         </footer>
     </section>
+
+    <script>
+        // Ruta del archivo Markdown
+        const markdownFile = "readme.md";
+
+        // Fetch para obtener el contenido del archivo Markdown
+        fetch(markdownFile)
+            .then(response => response.text())
+            .then(markdown => {
+                // Convertir Markdown a HTML usando Marked.js
+                const htmlContent = marked(markdown);
+                // Insertar el contenido convertido en el div
+                document.getElementById("content").innerHTML = htmlContent;
+            })
+            .catch(error => console.error("Error al cargar el archivo Markdown:", error));
+    </script>
 
 </body>
 
