@@ -40,7 +40,7 @@
             .then(response => response.text())
             .then(markdown => {
                 // Convertir Markdown a HTML usando Marked.js
-                const htmlContent = marked(markdown);
+                const htmlContent = marked.parse(markdown); 
                 // Insertar el contenido convertido en el div
                 document.getElementById("content").innerHTML = htmlContent;
             })
