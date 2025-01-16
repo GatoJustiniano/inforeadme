@@ -1,26 +1,27 @@
 -----------------------------------------------------------------------------
 github     : https://gatojustiniano.github.io/inforeadme
-title      : Casual-Markdown-Blog 
-subtitle   : By Casual-Markdown-Blog
-nav-group  : featured, new-5, tags, months
-nav-width  : 380px
+title      : Sample Blog (Dark Theme)
+subtitle   : Simple is the best
+nav-group  : featured, new-3, tags, months
+nav-width  : 320px
+theme      : dark
 menu       : 
    Home    : ?
    github  : https://gatojustiniano.github.io/inforeadme
-   Dark    : javascript:darkmode()
    About   : ?page=about.md
 -----------------------------------------------------------------------------
-<style comment="show nav at right">
-#header { xbackground: linear-gradient(to bottom right, #06c, #fc0); }
-#left-panel  { right:0; left:auto; width: {{nav-width}} }
-#right-panel { left:0; border-right:1px solid grey; right:calc({{nav-width}} + 20px) }
+<style comment="additional style">
+#header { {{css-header}}  }
+#left-panel  { width:{{nav-width}} }
+#right-panel { left: calc({{nav-width}} + 20px) }
 h1 { border-bottom:1px dotted grey }
 .nav-post a  { color: teal }
-.nav-tag  a  { color: #06c }
+.nav-tag  a  { color: green }
 .nav-month a { color: grey }
-.post-date   { font-size:10px; font-weight:400; color:#aaa }
+.post-date   { font-size:10px; color:#aaa }
 .post-title  { font-size:16px; }
-.post-tags   { left-margin:20px; padding:4px; font-size:10px; color:green; font-weight:400 }
+.post-tags   { left-margin:20px; padding:4px; font-size:10px; color:green }
+#md-post a { border-bottom:1px dotted grey }
 </style>
 
 <div id="md-post">
