@@ -15,9 +15,11 @@ En Odoo,
     IP / Dominio [de preferencia el dominio]
     Port ['el mismo que fue asignado en el router']
     Protocol [TCP]
-`code /var/named/82.207.67.in-addr.arpa.zone`
 
 
+## En Odoo, modulo Asistencia 
+
+Agregar y configurar el Dispositivo Biométrico
 
 
 
